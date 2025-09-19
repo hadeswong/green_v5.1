@@ -179,7 +179,9 @@
             let lastCardType = '';
             cardData.forEach((card, index) => {
                 // 获取卡片的基本类型（电话卡、实体卡或实体卡2）
-                const currentType = card.cardType.startsWith('電話') ? '電話卡' : card.cardType;
+               const currentType = card.cardType.startsWith('電話') ? '電話卡'
+                    : card.cardType.startsWith('臨時')? '臨時卡'
+                    : card.cardType;
                 
                 // 如果当前卡片类型与上一个不同，且不是第一个卡片，添加分隔线
                 if (lastCardType !== '' && currentType !== lastCardType) {
